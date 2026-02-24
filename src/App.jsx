@@ -2,11 +2,11 @@ import { useState, useEffect, useCallback } from "react";
 import "./index.css";
 import { slideData } from "./data/slides";
 import Slide from "./components/Slide";
-import { generatePPT } from "./utils/pptExport";
 
 function App() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [visibleFragments, setVisibleFragments] = useState([]);
+  const [activeBtn, setActiveBtn] = useState(null);
 
   const currentSlide = slideData[currentSlideIndex];
 
@@ -55,9 +55,16 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "ArrowRight" || e.key === " " || e.key === "Enter")
+      if (e.key === "ArrowRight" || e.key === " " || e.key === "Enter") {
+        setActiveBtn("next");
+        setTimeout(() => setActiveBtn(null), 150);
         nextStep();
-      if (e.key === "ArrowLeft") prevStep();
+      }
+      if (e.key === "ArrowLeft") {
+        setActiveBtn("prev");
+        setTimeout(() => setActiveBtn(null), 150);
+        prevStep();
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
@@ -85,18 +92,43 @@ function App() {
         ))}
 
         <div className="controls">
-          <button className="btn" onClick={prevStep}>
-            BACK
+          <button
+            className={`btn nav-btn ${activeBtn === "prev" ? "active-key" : ""}`}
+            onClick={prevStep}
+            aria-label="Back"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
           </button>
-          <button className="btn" onClick={nextStep}>
-            NEXT
+          <button
+            className={`btn nav-btn ${activeBtn === "next" ? "active-key" : ""}`}
+            onClick={nextStep}
+            aria-label="Next"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </button>
         </div>
-
-        <button id="ppt-download-btn" onClick={generatePPT}>
-          💾 Export Editable PPTX
-        </button>
-
         <div className="slide-number">
           <span id="slide-num">
             {currentSlideIndex + 1} / {slideData.length}

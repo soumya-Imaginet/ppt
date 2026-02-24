@@ -3,7 +3,7 @@ export const slideData = [
     id: 1,
     title: "Neural Networks in the Modern Software Tech Stack",
     subtitle: "Building Intelligent Software Systems",
-    author: "Your Name",
+    author: "Soumyadeep Chakraborty",
     company: "ImagiNET Ventures",
     type: "title",
   },
