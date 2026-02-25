@@ -1,8 +1,15 @@
 export const slideData = [
   {
+    id: 0,
+    title: "ImagiNET Shift",
+    subtitle: "Episode 7",
+    type: "teaser",
+  },
+  {
     id: 1,
-    title: "Neural Networks in the Modern Software Tech Stack",
-    subtitle: "Building Intelligent Software Systems",
+    title: "NEURAL NETWORKS IN MODERN SOFTWARE TECH",
+    subtitle:
+      "Understnad the AI behind the scenes and what is actually getting implemented in software engineering",
     author: "Soumyadeep Chakraborty",
     company: "ImagiNET Ventures",
     type: "title",

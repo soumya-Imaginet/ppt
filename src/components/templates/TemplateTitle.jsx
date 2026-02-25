@@ -32,9 +32,7 @@ const TemplateTitle = ({ data }) => {
         }}
       >
         {data.title.includes("Modern") ? (
-          <>
-            Neural Networks in the Modern Software Tech Stack
-          </>
+          <>Neural Networks in the Modern Software Tech Stack</>
         ) : (
           data.title
         )}
@@ -50,7 +48,7 @@ const TemplateTitle = ({ data }) => {
             For your time and attention
           </p>
 
-          {/* Rich animated illustration */}
+          {/* NEXT-GEN NEURAL SINGULARITY ILLUSTRATION */}
           <div
             className="diagram-stage"
             style={{
@@ -61,181 +59,200 @@ const TemplateTitle = ({ data }) => {
           >
             <div className="stage-art visible">
               <svg
-                viewBox="0 0 500 280"
-                style={{ width: "100%", height: "100%" }}
+                viewBox="0 0 800 450"
+                style={{ width: "100%", height: "100%", overflow: "visible" }}
               >
-                {/* Radiating rings */}
-                {[80, 60, 40, 25].map((r, i) => (
-                  <circle
-                    key={`ring-${i}`}
-                    cx="250"
-                    cy="120"
-                    r={r}
-                    fill="none"
-                    stroke="var(--accent-cyan)"
-                    strokeWidth="0.8"
-                    opacity={0.08 + i * 0.04}
-                    className="layer-pulse"
-                    style={{ animationDelay: `${i * 0.3}s` }}
-                  />
-                ))}
+                <defs>
+                  <filter
+                    id="hyperGlow"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="200%"
+                  >
+                    <feGaussianBlur stdDeviation="10" result="blur" />
+                    <feComposite
+                      in="SourceGraphic"
+                      in2="blur"
+                      operator="over"
+                    />
+                  </filter>
+                  <linearGradient
+                    id="coreGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="var(--accent-cyan)" />
+                    <stop offset="100%" stopColor="var(--accent-blue)" />
+                  </linearGradient>
+                </defs>
 
-                {/* Glowing center circle */}
-                <circle
-                  cx="250"
-                  cy="120"
-                  r="50"
-                  fill="rgba(0,242,255,0.04)"
-                  stroke="var(--accent-cyan)"
-                  strokeWidth="2"
-                  className="layer-pulse"
-                />
-
-                {/* Q&A icon */}
-                <text
-                  x="250"
-                  y="110"
-                  fill="var(--accent-cyan)"
-                  fontSize="28"
-                  textAnchor="middle"
-                  fontWeight="700"
-                  style={{ fontFamily: "inherit" }}
-                >
-                  Q&A
-                </text>
-                <text
-                  x="250"
-                  y="135"
-                  fill="var(--accent-magenta)"
-                  fontSize="10"
-                  textAnchor="middle"
-                >
-                  Let's Discuss
-                </text>
-
-                {/* Floating particles */}
-                {[
-                  {
-                    cx: 120,
-                    cy: 50,
-                    r: 3,
-                    color: "var(--accent-cyan)",
-                    delay: 0,
-                  },
-                  {
-                    cx: 380,
-                    cy: 60,
-                    r: 4,
-                    color: "var(--accent-magenta)",
-                    delay: 0.5,
-                  },
-                  {
-                    cx: 90,
-                    cy: 160,
-                    r: 3,
-                    color: "var(--accent-green)",
-                    delay: 1.0,
-                  },
-                  {
-                    cx: 410,
-                    cy: 170,
-                    r: 3,
-                    color: "var(--accent-orange)",
-                    delay: 1.5,
-                  },
-                  {
-                    cx: 160,
-                    cy: 200,
-                    r: 2,
-                    color: "var(--accent-blue)",
-                    delay: 0.3,
-                  },
-                  {
-                    cx: 340,
-                    cy: 190,
-                    r: 2,
-                    color: "var(--accent-cyan)",
-                    delay: 0.8,
-                  },
-                  {
-                    cx: 200,
-                    cy: 40,
-                    r: 2,
-                    color: "var(--accent-magenta)",
-                    delay: 1.2,
-                  },
-                  {
-                    cx: 300,
-                    cy: 35,
-                    r: 2,
-                    color: "var(--accent-green)",
-                    delay: 0.6,
-                  },
-                ].map((p, i) => (
+                {/* Ambient Particle Field */}
+                {[...Array(30)].map((_, i) => (
                   <circle
                     key={`p-${i}`}
-                    cx={p.cx}
-                    cy={p.cy}
-                    r={p.r}
-                    fill={p.color}
-                    opacity="0.6"
-                    className="node-blink"
-                    style={{ animationDelay: `${p.delay}s` }}
+                    cx={Math.random() * 800}
+                    cy={Math.random() * 450}
+                    r={Math.random() * 1.5}
+                    fill={
+                      i % 2 === 0
+                        ? "var(--accent-cyan)"
+                        : "var(--accent-magenta)"
+                    }
+                    className="particle-next-gen"
+                    style={{ animationDelay: `${Math.random() * 5}s` }}
+                    opacity="0.2"
                   />
                 ))}
 
-                {/* Orbiting particle around Q&A */}
-                <circle
-                  r="4"
-                  fill="var(--accent-cyan)"
-                  className="data-particle"
-                >
-                  <animateMotion
-                    dur="5s"
-                    repeatCount="indefinite"
-                    path="M 250,40 C 330,40 330,200 250,200 C 170,200 170,40 250,40"
-                  />
-                </circle>
-                <circle
-                  r="3"
-                  fill="var(--accent-magenta)"
-                  className="data-particle"
-                >
-                  <animateMotion
-                    dur="7s"
-                    repeatCount="indefinite"
-                    path="M 170,120 C 170,50 330,50 330,120 C 330,190 170,190 170,120"
-                  />
-                </circle>
+                {/* Main Singularity Core Group */}
+                <g transform="translate(400, 225)">
+                  {/* Massive energy rings */}
+                  <g className="orbital-ring">
+                    <circle
+                      r="180"
+                      fill="none"
+                      stroke="var(--accent-cyan)"
+                      strokeWidth="0.5"
+                      opacity="0.1"
+                      strokeDasharray="100 20"
+                    />
+                    <circle
+                      r="190"
+                      fill="none"
+                      stroke="var(--accent-cyan)"
+                      strokeWidth="1"
+                      opacity="0.05"
+                    />
+                  </g>
+                  <g className="orbital-ring-reverse">
+                    <circle
+                      r="160"
+                      fill="none"
+                      stroke="var(--accent-magenta)"
+                      strokeWidth="0.5"
+                      opacity="0.1"
+                      strokeDasharray="50 10"
+                    />
+                  </g>
 
-                {/* Decorative corner accents */}
-                <path
-                  d="M 60,30 L 60,15 L 75,15"
-                  fill="none"
-                  stroke="var(--accent-cyan)"
-                  strokeWidth="1.5"
-                  opacity="0.3"
-                />
-                <path
-                  d="M 440,30 L 440,15 L 425,15"
-                  fill="none"
-                  stroke="var(--accent-cyan)"
-                  strokeWidth="1.5"
-                  opacity="0.3"
-                />
-                <path
-                  d="M 60,230 L 60,245 L 75,245"
-                  fill="none"
-                  stroke="var(--accent-magenta)"
-                  strokeWidth="1.5"
-                  opacity="0.3"
-                />
-                <path
-                  d="M 440,230 L 440,245 L 425,245"
-                  fill="none"
-                  stroke="var(--accent-magenta)"
-                  strokeWidth="1.5"
-                  opacity="0.3"
+                  {/* Synaptic Light Firings (Firing from center) */}
+                  {[...Array(6)].map((_, i) => (
+                    <path
+                      key={`fire-${i}`}
+                      d={`M 0,0 Q ${Math.cos((i * 60 * Math.PI) / 180) * 100},${Math.sin((i * 60 * Math.PI) / 180) * 100} ${Math.cos((i * 60 * Math.PI) / 180) * 300},${Math.sin((i * 60 * Math.PI) / 180) * 300}`}
+                      fill="none"
+                      stroke="var(--accent-cyan)"
+                      strokeWidth="0.5"
+                      className="synapse-path"
+                      style={{ animationDelay: `${i * 1.2}s` }}
+                    />
+                  ))}
+
+                  {/* Orbital Text Data */}
+                  <g className="orbital-ring">
+                    <path
+                      id="coreTextPath"
+                      d="M -150,0 A 150,150 0 1,1 150,0 A 150,150 0 1,1 -150,0"
+                      fill="none"
+                    />
+                    <text
+                      fill="var(--accent-cyan)"
+                      fontSize="8"
+                      opacity="0.3"
+                      style={{ fontFamily: "monospace", letterSpacing: "2px" }}
+                    >
+                      <textPath href="#coreTextPath">
+                        NEURAL NETWORKS • ADAPTIVE SOFTWARE • ARTIFICIAL
+                        INTELLIGENCE • NEXT-GEN TECH •{" "}
+                      </textPath>
+                    </text>
+                  </g>
+
+                  {/* Consolidated Topic Nodes */}
+                  {[
+                    { angle: -45, r: 210, label: "SOFTWARE 2.0" },
+                    { angle: 135, r: 210, label: "DEEP LEARNING" },
+                    { angle: 225, r: 210, label: "AI TECH STACK" },
+                  ].map((node, i) => (
+                    <g
+                      key={`topic-${i}`}
+                      transform={`translate(${Math.cos((node.angle * Math.PI) / 180) * node.r}, ${Math.sin((node.angle * Math.PI) / 180) * node.r})`}
+                    >
+                      <circle
+                        r="5"
+                        fill="var(--accent-cyan)"
+                        filter="url(#hyperGlow)"
+                      />
+                      <text
+                        y="20"
+                        fill="var(--accent-cyan)"
+                        fontSize="9"
+                        fontWeight="700"
+                        textAnchor="middle"
+                        style={{
+                          letterSpacing: "1px",
+                          textShadow: "0 0 5px var(--accent-cyan)",
+                        }}
+                      >
+                        {node.label}
+                      </text>
+                    </g>
+                  ))}
+
+                  {/* THE CENTRAL SINGULARITY */}
+                  <g className="singularity-core">
+                    {/* Glowing background elements */}
+                    <g filter="url(#hyperGlow)">
+                      <circle
+                        r="70"
+                        fill="rgba(0, 229, 255, 0.05)"
+                        stroke="var(--accent-cyan)"
+                        strokeWidth="0.5"
+                      />
+                      <circle r="50" fill="url(#coreGrad)" opacity="0.9" />
+                    </g>
+
+                    {/* Geometric "Crystal" fragments */}
+                    {[0, 60, 120, 180, 240, 300].map((angle) => (
+                      <polygon
+                        key={angle}
+                        points="0,-40 5,0 0,40 -5,0"
+                        fill="#fff"
+                        opacity="0.3"
+                        transform={`rotate(${angle})`}
+                      />
+                    ))}
+
+                    {/* High-visibility Q&A text */}
+                    <text
+                      x="0"
+                      y="12"
+                      fill="#fff"
+                      fontSize="36"
+                      fontWeight="900"
+                      textAnchor="middle"
+                      style={{
+                        letterSpacing: "4px",
+                        textShadow:
+                          "0 4px 15px rgba(0,0,0,0.9), 0 0 10px rgba(0, 242, 255, 0.3)",
+                        pointerEvents: "none",
+                      }}
+                    >
+                      Q&A
+                    </text>
+                  </g>
+                </g>
+
+                {/* Moving scanline */}
+                <rect
+                  width="800"
+                  height="1"
+                  fill="var(--accent-cyan)"
+                  opacity="0.1"
+                  className="scanline-effect"
                 />
               </svg>
             </div>
@@ -258,6 +275,15 @@ const TemplateTitle = ({ data }) => {
           </p>
           <p style={{ fontSize: "1rem", color: "var(--text-secondary)" }}>
             Company: {data.company}
+          </p>
+          <p
+            style={{
+              fontSize: "0.9rem",
+              color: "var(--text-secondary)",
+              marginTop: "0.6rem",
+            }}
+          >
+            {new Date().toLocaleString()}
           </p>
         </div>
       )}

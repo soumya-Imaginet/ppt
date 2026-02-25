@@ -6,6 +6,7 @@ import TemplateHybrid from "./templates/TemplateHybrid";
 import SvgTemplate from "./templates/SvgTemplate";
 import SlideAnimatedArchitecture from "./templates/SlideAnimatedArchitecture";
 import SlideBrainDiagram from "./templates/SlideBrainDiagram";
+import TemplateTeaser from "./templates/TemplateTeaser";
 
 const Slide = ({ data, active, prev, next, visibleFragments, onCardClick }) => {
   const isDiagramOnly = data.type === "diagram";
@@ -13,6 +14,8 @@ const Slide = ({ data, active, prev, next, visibleFragments, onCardClick }) => {
 
   const renderContent = () => {
     switch (data.type) {
+      case "teaser":
+        return <TemplateTeaser data={data} />;
       case "title":
         return <TemplateTitle data={data} />;
       case "grid":

@@ -129,6 +129,10 @@ function App() {
             </svg>
           </button>
         </div>
+        <div className="slides-footer">
+          &copy; {new Date().getFullYear()} All Rights Reserved. |{" "}
+          {new Date().toLocaleString()}
+        </div>
         <div className="slide-number">
           <span id="slide-num">
             {currentSlideIndex + 1} / {slideData.length}
