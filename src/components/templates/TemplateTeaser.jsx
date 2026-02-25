@@ -37,11 +37,6 @@ const TemplateTeaser = ({ data }) => {
           </div>
         </div>
       </div>
-
-      <div className="teaser-footer">
-        <span className="tech-code">IMAGINET_SHIFT // SESSION_07_ACTIVE</span>
-        <span className="tech-code-right">RES_4K_STABLE</span>
-      </div>
     </div>
   );
 };

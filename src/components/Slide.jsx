@@ -10,7 +10,8 @@ import TemplateTeaser from "./templates/TemplateTeaser";
 
 const Slide = ({ data, active, prev, next, visibleFragments, onCardClick }) => {
   const isDiagramOnly = data.type === "diagram";
-  const slideClass = `slide ${active ? "active" : ""} ${prev ? "prev" : ""} ${next ? "next" : ""} ${isDiagramOnly ? "slide-diagram-only" : ""}`;
+  const isTeaser = data.type === "teaser";
+  const slideClass = `slide ${active ? "active" : ""} ${prev ? "prev" : ""} ${next ? "next" : ""} ${isDiagramOnly ? "slide-diagram-only" : ""} ${isTeaser ? "slide-teaser-only" : ""}`;
 
   const renderContent = () => {
     switch (data.type) {
