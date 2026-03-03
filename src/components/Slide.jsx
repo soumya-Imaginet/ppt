@@ -6,6 +6,7 @@ import TemplateHybrid from "./templates/TemplateHybrid";
 import SvgTemplate from "./templates/SvgTemplate";
 import SlideAnimatedArchitecture from "./templates/SlideAnimatedArchitecture";
 import SlideBrainDiagram from "./templates/SlideBrainDiagram";
+import SlideNNArchitecture from "./templates/SlideNNArchitecture";
 import TemplateTeaser from "./templates/TemplateTeaser";
 
 const Slide = ({ data, active, prev, next, visibleFragments, onCardClick }) => {
@@ -29,6 +30,8 @@ const Slide = ({ data, active, prev, next, visibleFragments, onCardClick }) => {
         );
       case "diagram":
         return <TemplateDiagram data={data} />;
+      case "nn-architecture":
+        return <SlideNNArchitecture data={data} />;
       case "svg-brain":
         return <SlideBrainDiagram data={data} />;
       case "animated-arch":

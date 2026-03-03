@@ -462,35 +462,77 @@ p {
 .visual-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Glass edge highlight */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 24px;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   box-shadow: var(--card-shadow);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .visual-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-5px);
-  border-color: rgba(0, 229, 255, 0.4);
-  box-shadow: 0 12px 40px rgba(0, 229, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 15px 45px rgba(0, 229, 255, 0.25);
 }
 
 .visual-card.active {
   border-color: var(--accent-cyan);
-  background: rgba(0, 229, 255, 0.05);
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);
+  background: rgba(0, 229, 255, 0.15);
+  transform: translateY(-20px) scale(1.1); /* Dramatically bigger on focus */
+  box-shadow: 0 20px 60px rgba(0, 229, 255, 0.4);
+  z-index: 100;
+}
+
+.visual-card.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-cyan),
+    transparent
+  );
 }
 
 .visual-card h4 {
   color: var(--accent-cyan);
   margin-bottom: 10px;
   font-size: 1.2rem;
+}
+
+.card-image {
+  width: 100%;
+  height: 240px; /* Much larger images */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(0.95);
+}
+
+.visual-card.active .card-image img {
+  transform: scale(1.15); /* Zoom image when focused */
+  filter: brightness(1.15) contrast(1.1);
 }
 
 /* Connecting lines between cards */
@@ -613,6 +655,67 @@ p {
 .stage-art svg {
   width: 80%;
   height: 80%;
+}
+
+/* ===== PARAMS OVERLAY (EXPLANATION) ===== */
+.params-overlay {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  animation: blurIn 0.8s ease forwards;
+}
+
+.param-item {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.param-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.param-img {
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.param-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.param-item h5 {
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.param-item p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.param-item strong {
+  color: var(--accent-orange);
 }
 
 /* ===== FLOATING ILLUSTRATION (Slide 1) ===== */

@@ -398,7 +398,7 @@ const SlideAnimatedArchitecture = ({ data, visibleFragments, onCardClick }) => {
                 textAlign: "center",
               }}
             >
-              ← Click a card to see its animation
+              ← Click a card to see the breakdown
             </p>
           </div>
         )}
