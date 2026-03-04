@@ -7,6 +7,7 @@ import SvgTemplate from "./templates/SvgTemplate";
 import SlideAnimatedArchitecture from "./templates/SlideAnimatedArchitecture";
 import SlideBrainDiagram from "./templates/SlideBrainDiagram";
 import SlideNNArchitecture from "./templates/SlideNNArchitecture";
+import SlideImageRecognition from "./templates/SlideImageRecognition";
 import TemplateTeaser from "./templates/TemplateTeaser";
 
 const Slide = ({ data, active, prev, next, visibleFragments, onCardClick }) => {
@@ -56,6 +57,13 @@ const Slide = ({ data, active, prev, next, visibleFragments, onCardClick }) => {
             data={data}
             visibleFragments={visibleFragments}
             onCardClick={onCardClick}
+          />
+        );
+      case "image-recognition":
+        return (
+          <SlideImageRecognition
+            data={data}
+            visibleFragments={visibleFragments}
           />
         );
       default:

@@ -133,6 +133,55 @@ export const slideData = [
   },
   {
     id: 9,
+    title: "The Big Three: ANN, RNN, and CNN",
+    subtitle: "A quick guide to choosing the right 'Brain' for the job.",
+    type: "grid",
+    items: [
+      {
+        id: "ann-card",
+        title: "ANN (Standard 'Brain')",
+        image: "assets/ann_architecture_diagram_1772604310887.png",
+        text: "Think of this as a 'Smart Spreadsheet'. It looks at facts like age, salary, and habits. **Example**: Predicting if a bank loan should be approved or if a user will cancel their subscription.",
+      },
+      {
+        id: "rnn-card",
+        title: "RNN ('Memory' Brain)",
+        image: "assets/rnn_sequence_logic_1772604333830.png",
+        text: "Think of this as a 'Storyteller'. It remembers what happened a second ago. **Example**: Siri understanding your speech, or your keyboard predicting the next word you want to type.",
+      },
+      {
+        id: "cnn-card",
+        title: "CNN ('Visual' Brain)",
+        image: "assets/cnn_image_processing_1772604349294.png",
+        text: "Think of this as 'Digital Eyes'. It scans for shapes and patterns. **Example**: Facebook tagging your friends in photos automatically or a self-driving car seeing a stop sign.",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "Visual Intelligence: How Image Recognition Works",
+    subtitle: "Stepping through the transformation from raw pixels to meaning.",
+    type: "image-recognition",
+    items: [
+      {
+        id: "step-1",
+        title: "Step 1: The Input Tensor",
+        text: "An image is just a grid of numbers (pixels). The computer sees intensity values, not shapes... yet.",
+      },
+      {
+        id: "step-2",
+        title: "Step 2: Convolutional Filters",
+        text: "Filters scan the image to detect edges and textures. Each layer 'learns' to see complex features like circles or eyes.",
+      },
+      {
+        id: "step-3",
+        title: "Step 3: Probabilistic Output",
+        text: "The network calculates confidence scores. It doesn't 'guess'—it calculates the highest probability based on learned patterns.",
+      },
+    ],
+  },
+  {
+    id: 11,
     title: "The Learning Loop: A Chef's Secret Recipe",
     subtitle: "How AI teaches itself through repeated trials",
     type: "grid",
@@ -158,7 +207,7 @@ export const slideData = [
     ],
   },
   {
-    id: 10,
+    id: 12,
     title: "Deterministic vs Probabilistic Systems",
     type: "svg",
     items: [
@@ -176,7 +225,7 @@ export const slideData = [
     diagrams: [{ id: "s7-diagram", type: "svg" }],
   },
   {
-    id: 11,
+    id: 13,
     title: "Where AI Fits in the Tech Stack",
     type: "grid",
     items: [
@@ -203,14 +252,14 @@ export const slideData = [
     ],
   },
   {
-    id: 12,
+    id: 14,
     title: "AI-Integrated Tech Stack",
     subtitle: "Modern AI-Integrated Tech Stack: Conceptual Diagram",
     type: "diagram",
     image: "assets/ai_tech_stack_integration_1771910185479.png",
   },
   {
-    id: 13,
+    id: 15,
     title: "Real-World Use Cases",
     type: "svg",
     items: [
@@ -228,7 +277,7 @@ export const slideData = [
     diagrams: [{ id: "s9-diagram", type: "svg" }],
   },
   {
-    id: 14,
+    id: 16,
     title: "Web & App Development",
     type: "svg",
     items: [
@@ -241,7 +290,7 @@ export const slideData = [
     diagrams: [{ id: "s10-diagram", type: "svg" }],
   },
   {
-    id: 15,
+    id: 17,
     title: "Tools & Ecosystem",
     type: "svg",
     items: [
@@ -259,7 +308,7 @@ export const slideData = [
     diagrams: [{ id: "s11-diagram", type: "svg" }],
   },
   {
-    id: 16,
+    id: 18,
     title: "Production Challenges",
     type: "svg",
     items: [
@@ -277,7 +326,7 @@ export const slideData = [
     diagrams: [{ id: "s12-diagram", type: "svg" }],
   },
   {
-    id: 17,
+    id: 19,
     title: "Best Practices",
     type: "svg",
     items: [
@@ -290,7 +339,7 @@ export const slideData = [
     diagrams: [{ id: "s13-diagram", type: "svg" }],
   },
   {
-    id: 18,
+    id: 20,
     title: "ImagiNET Ventures x AI",
     type: "svg",
     items: [
@@ -303,25 +352,25 @@ export const slideData = [
     diagrams: [{ id: "s14-diagram", type: "svg" }],
   },
   {
-    id: 19,
+    id: 21,
     title: "The Next Frontier: AGI",
     subtitle: "What is AGI (Artificial General Intelligence)?",
     type: "grid",
     items: [
       {
-        id: "s15-card-1",
+        id: "s20-card-1",
         title: "The Full Form: A.G.I.",
         image: "assets/agi_tech.png",
         text: "Artificial General Intelligence. It is AI that can learn and perform ANY intellectual task a human can.",
       },
       {
-        id: "s15-card-2",
+        id: "s20-card-2",
         title: "Like a Digital Human",
         image: "assets/agi_digital_human.jpg",
         text: "Unlike current AI, AGI doesn't just do one thing (like play chess). It can write poems, code, and drive a car all at once.",
       },
       {
-        id: "s15-card-3",
+        id: "s20-card-3",
         title: "True Generalization",
         image: "assets/agi_problem_solving.png",
         text: "A machine with common sense, creativity, and the ability to solve problems it has never seen before.",
@@ -329,7 +378,7 @@ export const slideData = [
     ],
   },
   {
-    id: 20,
+    id: 22,
     title: "Narrow AI (Today) vs AGI (Future)",
     subtitle: "Understanding the fundamental shift in intelligence",
     type: "diagram",
@@ -337,19 +386,19 @@ export const slideData = [
     text: "Narrow AI (Siri, ChatGPT) is like a Specialist. AGI (The Future) is like an Omni-capable Genius.",
   },
   {
-    id: 21,
+    id: 23,
     title: "Why AGI Changes Everything",
     subtitle: "The leap from automation to autonomy",
     type: "grid",
     items: [
       {
-        id: "s16-card-1",
+        id: "s22-card-1",
         title: "Solving Global Challenges",
         image: "assets/agi_challenges.png",
         text: "AGI can find cures for diseases and solve climate change by connecting dots across all human knowledge.",
       },
       {
-        id: "s16-card-2",
+        id: "s22-card-2",
         title: "24/7 Global Innovation",
         image: "assets/agi_innovation.jpg",
         text: "A system that never sleeps, constantly learning, building software, and improving the world across all domains.",
@@ -357,19 +406,19 @@ export const slideData = [
     ],
   },
   {
-    id: 22,
+    id: 24,
     title: "The Future with AGI",
     subtitle: "A world transformed by general intelligence",
     type: "grid",
     items: [
       {
-        id: "s17-card-1",
+        id: "s23-card-1",
         title: "Personal Polymaths",
         image: "assets/agi_assistant.jpg",
         text: "Everyone will have a personal AGI assistant that can do everything from legal work to advanced scientific research.",
       },
       {
-        id: "s17-card-2",
+        id: "s23-card-2",
         title: "Self-Evolving Economies",
         image: "assets/agi_economy.jpg",
         text: "Software and systems that write, repair, and upgrade themselves, leading to a massive boost in global productivity.",
@@ -377,7 +426,7 @@ export const slideData = [
     ],
   },
   {
-    id: 23,
+    id: 25,
     title: "Key Takeaways",
     type: "svg",
     items: [
@@ -390,7 +439,34 @@ export const slideData = [
     diagrams: [{ id: "s18-diagram", type: "svg" }],
   },
   {
-    id: 24,
+    id: 26,
+    title: "Interactive Live Labs",
+    subtitle:
+      "Experience Neural Networks in action with these interactive tools.",
+    type: "grid",
+    items: [
+      {
+        id: "lab-1",
+        title: "Google Teachable Machine",
+        image: "assets/live_ai_demo_icons_1772605750653.png",
+        text: "Train a model live using your webcam! Show your audience how a computer learns to recognize your face, hand gestures, or objects in seconds.",
+      },
+      {
+        id: "lab-2",
+        title: "TensorFlow Playground",
+        image: "assets/live_ai_demo_icons_1772605750653.png",
+        text: "A visual simulation where you can see neurons 'fire' and decision boundaries form as the network learns to separate data points.",
+      },
+      {
+        id: "lab-3",
+        title: "Quick, Draw!",
+        image: "assets/live_ai_demo_icons_1772605750653.png",
+        text: "A fun AI game where a neural network tries to guess what you are drawing in real-time. Perfectly demonstrates CNN pattern recognition.",
+      },
+    ],
+  },
+  {
+    id: 27,
     title: "Thank You",
     subtitle: "Questions?",
     type: "title",
